@@ -1,11 +1,11 @@
-export default function CourseBox(props) {
-  console.log(props);
+export default function CourseBox({ course }) {
+  //   console.log(props);
 
   return (
     <div>
-      <h2>{props?.title}</h2>
-      <p>{props?.detail}</p>
-      <span>{props?.time}</span>
+      <h2>{course?.title}</h2>
+      <p>{course?.details}</p>
+      <span>time:10</span>
     </div>
   );
 }
