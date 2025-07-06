@@ -7,7 +7,7 @@ export default function CourseBox({ course }) {
       {/* <p>{course?.details}</p> */}
       <p>{course?.description}</p>
       <span>time:10</span>
-      <p>---</p>
+      <p>-*-*-*-*-*-*-*-</p>
     </div>
   );
 }
