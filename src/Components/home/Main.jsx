@@ -17,21 +17,27 @@ export default function Main() {
       description: "this is about js course",
     },
   ]);
+  const [loading, setLoading] = useState(false);
 
   const loadMoreCourseHandler = () => {
-    setCourses([
-      ...courses,
-      {
-        id: 3,
-        title: "css course",
-        description: "this is about css course",
-      },
-      {
-        id: 4,
-        title: "html course",
-        description: "this is about html course",
-      },
-    ]);
+    setLoading(true);
+
+    setTimeout(() => {
+      setCourses([
+        ...courses,
+        {
+          id: 3,
+          title: "css course",
+          description: "this is about css course",
+        },
+        {
+          id: 4,
+          title: "html course",
+          description: "this is about html course",
+        },
+      ]);
+      setLoading(false);
+    }, 3000);
   };
 
   // let courses = [
@@ -68,19 +74,27 @@ export default function Main() {
         }}
       />
       <p>********************************</p> */}
-      {courses.map((course) => (
-        // <div>
-        //   <h2>{course?.title}</h2>
-        //   <p>{course?.description}</p>
-        // </div>
-        // or use coursebox
-        <CourseBox key={course.id} course={course} />
-      ))}
-      <button onClick={loadMoreCourseHandler}>Load More</button>
-      {/*<p>********************************</p>
+      <CourseList>
+        {courses.map((course) => (
+          // <div>
+          //   <h2>{course?.title}</h2>
+          //   <p>{course?.description}</p>
+          // </div>
+          // or use coursebox
+          <CourseBox key={course.id} course={course} />
+        ))}
+        {/* <button onClick={loadMoreCourseHandler}>Load More</button> */}
+        {/*<p>********************************</p>
        {headings.map((item) => (
         <span>{item}</span>
       ))} */}
+
+        {loading ? (
+          <span>Loading ...</span>
+        ) : (
+          <button onClick={loadMoreCourseHandler}>Load More</button>
+        )}
+      </CourseList>
     </div>
   );
 }
