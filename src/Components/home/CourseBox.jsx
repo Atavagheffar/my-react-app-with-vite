@@ -4,8 +4,10 @@ export default function CourseBox({ course }) {
   return (
     <div>
       <h2>{course?.title}</h2>
-      <p>{course?.details}</p>
+      {/* <p>{course?.details}</p> */}
+      <p>{course?.description}</p>
       <span>time:10</span>
+      <p>---</p>
     </div>
   );
 }
