@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 export default function CourseBox({ course }) {
   //   console.log(props);
 
-  const HeadStyle = {
-    backgroundColor: "red",
+  const [courseDescriptionHover, setCourseDescriptionHover] = useState(false);
+
+  let HeadStyle = {
+    backgroundColor: courseDescriptionHover ? "red" : "transparent",
     paddingBottom: "5rem",
   };
 
@@ -13,8 +17,10 @@ export default function CourseBox({ course }) {
       <p
         className="course-description"
         style={HeadStyle}
-        onMouseEnter={() => console.log("mouse enter")}
-        onMouseLeave={() => console.log("mouse leave")}
+        // onMouseEnter={() => console.log("mouse enter")}
+        // onMouseLeave={() => console.log("mouse leave")}
+        onMouseEnter={() => setCourseDescriptionHover(true)}
+        onMouseLeave={() => setCourseDescriptionHover(false)}
       >
         {course?.description}
       </p>
