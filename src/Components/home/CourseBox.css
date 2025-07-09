@@ -1,0 +1,14 @@
+.CourseBox-title {
+  color: red;
+  background-color: black;
+}
+.CourseBox-description {
+  color: blue;
+}
+.CourseBox-description:hover {
+  background-color: yellowgreen;
+}
+
+/* h2 {
+  background-color: cornflowerblue;
+} */
